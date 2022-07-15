@@ -9,11 +9,7 @@ class Book {
     };
 
   toggleRead() {
-    if (this.read) {
-      this.read = false;
-    } else {
-      this.read = true;
-    };
+    this.read = !this.read;
     while (library.firstChild) {
       library.removeChild(library.lastChild)
     };
