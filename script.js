@@ -1,21 +1,14 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+class Book {
+  constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
-      inf = `${this.title} by ${this.author}, ${this.pages},  `;
-      if (this.read) {
-        return inf + 'already read.';
-      } else {
-        return inf + 'not read yet.';
-      };
     };
-  };
 
-  Book.prototype.toggleRead = function() {
+  toggleRead() {
     if (this.read) {
       this.read = false;
     } else {
@@ -26,6 +19,10 @@ function Book(title, author, pages, read) {
     };
     createLibrary();
   };
+}
+
+
+
 
 addBtn = document.querySelector('#add-btn')
 addBtn.addEventListener('click', () => {
